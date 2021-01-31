@@ -28,8 +28,7 @@ jobs:
       - name: Checking out the repository
       - uses: actions/checkout@v2
 
-      - name: Setting up Python
-      - uses: actions/setup-python@v2
+      - uses: azure/login@v1
         with:
-          python-version: 3.5
+         creds: ${{ secrets.AZURE_CREDENTIALS }}
       
