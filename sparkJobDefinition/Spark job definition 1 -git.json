@@ -1,0 +1,31 @@
+{
+	"name": "Spark job definition 1 -git",
+	"properties": {
+		"targetBigDataPool": {
+			"referenceName": "sparkpoolgit",
+			"type": "BigDataPoolReference"
+		},
+		"requiredSparkVersion": "2.4",
+		"language": "python",
+		"jobProperties": {
+			"name": "Spark job definition 1 -git",
+			"file": "abfss://aasharmafs@aadsharmadl.dfs.core.windows.net/synapse/workspaces/aadsharma-github-cicd-1/batchjobs/Spark%20job%20definition%201%20-git/wordcount.py",
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2"
+			},
+			"args": [
+				"abfss://aasharmafs@aadsharmadl.dfs.core.windows.net/shakespeare.txt",
+				"abfss://aasharmafs@aadsharmadl.dfs.core.windows.net/result.txt"
+			],
+			"jars": [],
+			"files": [],
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2
+		}
+	}
+}
